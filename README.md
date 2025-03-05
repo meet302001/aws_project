@@ -44,6 +44,40 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+### 4. Create an AWS Lambda Deployment Package
+To deploy the Lambda function manually, follow these steps:
+
+#### **Step 1: Install Dependencies in a Separate Folder**
+```sh
+mkdir package
+pip install -r requirements.txt -t package/
+```
+
+#### **Step 2: Add Your Lambda Function Code**
+Copy your Lambda function (`lambda_function.py`) into the `package/` directory.
+```sh
+cp lambda_function.py package/
+```
+
+#### **Step 3: Create a Zip Archive**
+Navigate to the `package/` directory and zip the contents:
+```sh
+cd package
+zip -r ../lambda_function.zip .
+```
+
+#### **Step 4: Upload to AWS Lambda**
+Using AWS CLI:
+```sh
+aws lambda update-function-code --function-name your_lambda_function_name --zip-file fileb://lambda_function.zip
+```
+
+---
+
+
+---
+
+
 ---
 
 ## Contribution
