@@ -72,13 +72,6 @@ Using AWS CLI:
 aws lambda update-function-code --function-name your_lambda_function_name --zip-file fileb://lambda_function.zip
 ```
 
----
-
-
----
-
-
----
 
 ## Contribution
 Feel free to fork this repository, open issues, or submit pull requests!
